@@ -11,7 +11,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item"> <a href="template.php" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Category</p>
                             </a> </li>
                         <li class="nav-item"> <a href="category-add.php" class="nav-link"> <i class="bi bi-plus-square-dotted"></i>

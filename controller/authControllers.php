@@ -12,6 +12,10 @@ class AuthController extends AuthModel
     // Queries for data retrieval
     const GET_CATEGORIES_QUERY = "SELECT * FROM `categories`";
     const ADD_CATEGORY_QUERY = "INSERT INTO `categories` (name, categoryURL) VALUES (?, ?)";
+    const GET_CATEGORY_BY_ID_QUERY = "SELECT * FROM `categories` WHERE id = ?";
+    const UPDATE_CATEGORY_QUERY = "UPDATE `categories` SET name = ?, categoryURL = ? WHERE id = ?";
+    const DELETE_CATEGORY_QUERY = "DELETE FROM `categories` WHERE id = ?";
+
     // const ADMIN_LOGIN_QUERY = "SELECT * FROM `admins` WHERE (email = ? OR username = ?) AND password_hash = ?";
     // const VISITORS_QUERY = "SELECT COUNT(*) as total FROM visitors";
     // const CONTACT_MESSAGES_QUERY = "SELECT COUNT(*) as total FROM contact_messages";
@@ -41,4 +45,9 @@ class AuthController extends AuthModel
     {
         return $this->update($query, $array);
     }
+    public function getCategoryById($query,$array)
+    {
+        return $this->viewListItems($query, $array);
+    }
+    
 }
