@@ -4,18 +4,36 @@
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/template.php' || $_SERVER['REQUEST_URI'] == '/category-add.php' ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>
                             Category
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="template.php" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item "> <a href="template.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/template.php' ? "active" : "" ?>"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Category</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="category-add.php" class="nav-link"> <i class="bi bi-plus-square-dotted"></i>
+                        <li class="nav-item "> <a href="category-add.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/category-add.php' ? "active" : "" ?>"> <i class="bi bi-plus-square-dotted"></i>
                                 <p>Add Category</p>
+                            </a> </li>
+                        <!-- <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Cards</p>
+                            </a> </li> -->
+                    </ul>
+                </li>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/brand.php' || $_SERVER['REQUEST_URI'] == '/brand-add.php' ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-ev-front"></i>
+                        <p>
+                            Brand
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item "> <a href="brand.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/brand.php' ? "active" : "" ?>"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Brand</p>
+                            </a> </li>
+                        <li class="nav-item "> <a href="brand-add.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/brand-add.php' ? "active" : "" ?>"> <i class="bi bi-plus-square-dotted"></i>
+                                <p>Add Brand</p>
                             </a> </li>
                         <!-- <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Cards</p>

@@ -7,10 +7,10 @@ use \dbn\AuthController;
 require_once 'controller/authControllers.php';
 
 $obj = new AuthController();
-$query = $obj::GET_CATEGORIES_QUERY;
-$queryDelete = $obj::DELETE_CATEGORY_QUERY;
+$query = $obj::GET_BRAND_QUERY;
+$queryDelete = $obj::DELETE_BRAND_QUERY;
 $array = [];
-$data = $obj->getAllCategories($query, $array);
+$data = $obj->getAllList($query, $array);
 if (
     $_SERVER["REQUEST_METHOD"] == "POST"
 ) {
@@ -18,7 +18,7 @@ if (
         $_POST['id']
     ];
     $obj->addCategory($queryDelete, $arrayDelete);
-    header('Location: /template.php');
+    header('Location: /brand.php');
 }
 
 ?>
@@ -58,22 +58,22 @@ if (
                                 <td><?= $value['name'] ?></td>
                                 <td>
                                     <div style="width: 160px; height: 160px;">
-                                        <img class="img-thumbnail" src="http://localhost:8000/<?= $value['categoryURL'] ?>">
+                                        <img class="img-thumbnail" src="http://localhost:8000/<?= $value['logoURL'] ?>">
                                     </div>
                                 </td>
                                 <td>
-                                    <a type="button" href="category-edit.php?id=<?= $value['id'] ?>" class="btn btn-outline-primary mb-2"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a type="button" href="brand-edit.php?id=<?= $value['id'] ?>" class="btn btn-outline-primary mb-2"><i class="bi bi-pencil-square"></i> Edit</a>
                                     <button type="button" class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#delteModal<?= $value['id'] ?>"><i class="bi bi-trash"></i> Delete</button>
                                     <div class="modal fade" id="delteModal<?= $value['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Delete Category</h5>
+                                                        <h5 class="modal-title">Delete Brand</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Are you sure you want to delete this category <?= $value['name'] ?></p>
+                                                        <p>Are you sure you want to delete this brand <?= $value['name'] ?></p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>

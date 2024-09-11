@@ -7,21 +7,21 @@ use \dbn\AuthController;
 require_once 'controller/authControllers.php';
 
 $obj = new AuthController();
-$query = $obj::GET_CATEGORY_BY_ID_QUERY;
+$query = $obj::GET_BRAND_BY_ID_QUERY;
 $id = $_GET['id'];
 $array = [$id];
 $data = array_values(($obj->getCategoryById($query, $array)))[0];
-$queryUpdate = $obj::UPDATE_CATEGORY_QUERY;
+$queryUpdate = $obj::UPDATE_BRAND_QUERY;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     if (!empty($_FILES) && $_FILES['image']['name'] != '') {
-        $target_dir = "resources/";
+        $target_dir = "logosResources/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $file_name = $_FILES["image"]["name"];
-        $array = [$name, "resources/" . $file_name, $id];
+        $array = [$name, "logosResources/" . $file_name, $id];
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
             $uploadOk = 1;
@@ -36,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     } else {
-        $array = [$name, $data['categoryURL'], $id];
+        $array = [$name, $data['logoURL'], $id];
         $obj->addCategory($queryUpdate, $array);
     }
-    header('Location: /template.php');
+    header('Location: /brand.php');
 }
 
 
@@ -54,14 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="card card-primary card-outline mb-4"> <!--begin::Header-->
         <div class="card-header">
-            <div class="card-title">Edit Category</div>
+            <div class="card-title">Edit Brand</div>
         </div> <!--end::Header--> <!--begin::Form-->
         <form action="<?= $_SERVER['PHP_SELF'] . '?id=' . $id ?>" method="POST" enctype="multipart/form-data"> <!--begin::Body-->
             <div class="card-body">
-                <div class="mb-3"> <label for="exampleInputEmail1" class="form-label">Category Name</label> <input type="text" name="name" class="form-control" id="exampleInputEmail1" value=" <?= $data['name'] ?>">
+                <div class="mb-3"> <label for="exampleInputEmail1" class="form-label">Brand Name</label> <input type="text" name="name" class="form-control" id="exampleInputEmail1" value=" <?= $data['name'] ?>">
                 </div>
                 <div style="width: 160px; height: 160px;">
-                    <img class="img-thumbnail" src="http://localhost:8000/<?= $data['categoryURL'] ?>">
+                    <img class="img-thumbnail" src="http://localhost:8000/<?= $data['logoURL'] ?>">
                 </div>
                 <div class="input-group mb-3"> <input type="file" accept="image/*" name="image" class="form-control" id="inputGroupFile02"> <label class="input-group-text" for="inputGroupFile02">Upload</label> </div>
             </div> <!--end::Body--> <!--begin::Footer-->
