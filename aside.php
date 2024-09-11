@@ -40,6 +40,24 @@
                             </a> </li> -->
                     </ul>
                 </li>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/sub-brand.php' || $_SERVER['REQUEST_URI'] == '/sub-brand-add.php' ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-ev-front"></i>
+                        <p>
+                            Sub Brand
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item "> <a href="sub-brand.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/sub-brand.php' ? "active" : "" ?>"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Sub Brand</p>
+                            </a> </li>
+                        <li class="nav-item "> <a href="sub-brand-add.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/sub-brand-add.php' ? "active" : "" ?>"> <i class="bi bi-plus-square-dotted"></i>
+                                <p>Add Sub Brand</p>
+                            </a> </li>
+                        <!-- <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Cards</p>
+                            </a> </li> -->
+                    </ul>
+                </li>
 
             </ul> <!--end::Sidebar Menu-->
         </nav>
