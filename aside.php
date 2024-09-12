@@ -58,6 +58,22 @@
                             </a> </li> -->
                     </ul>
                 </li>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/users.php'  ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i>
+                        <p>
+                            Users
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item "> <a href="users.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/users.php' ? "active" : "" ?>"> <i class="bi bi-people"></i>
+                                <p>Users</p>
+                            </a> </li>
+
+                        <!-- <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Cards</p>
+                            </a> </li> -->
+                    </ul>
+                </li>
 
             </ul> <!--end::Sidebar Menu-->
         </nav>

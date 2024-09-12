@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="card-header">
             <div class="card-title">Edit Sub Brand</div>
         </div> <!--end::Header--> <!--begin::Form-->
-        <form action="<?= $_SERVER['PHP_SELF'].'?id='.$id ?>" method="POST"> <!--begin::Body-->
+        <form action="<?= $_SERVER['PHP_SELF'] . '?id=' . $id ?>" method="POST"> <!--begin::Body-->
             <div class="card-body">
                 <div class="mb-3"> <label for="exampleInputEmail1" class="form-label">name</label> <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $data['name'] ?>">
                 </div>

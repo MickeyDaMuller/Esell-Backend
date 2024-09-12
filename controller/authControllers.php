@@ -25,6 +25,10 @@ class AuthController extends AuthModel
     const GET_SUB_BRAND_BY_ID_QUERY = "SELECT * FROM `sub_brands` WHERE id = ?";
     const UPDATE_SUB_BRAND_QUERY = "UPDATE `sub_brands` SET name = ?, brandLogoId = ? WHERE id = ?";
     const DELETE_SUB_BRAND_QUERY = "DELETE FROM `sub_brands` WHERE id = ?";
+    const GET_ALL_USERS_QUERY = "SELECT * FROM `users`";
+    const CHANGE_USER_STATE_QUERY = "UPDATE `users` SET active = ? WHERE id = ?";
+
+
 
 
     // Method to fetch total visitors

@@ -78,7 +78,9 @@ if (
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                                        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST"> <input type="hidden" name="id" value="<?= $value['id'] ?>"> <button type="submit" class="btn btn-primary">yes</button></form>
+                                                        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST"> <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                                                            <button type="submit" class="btn btn-primary">yes</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
