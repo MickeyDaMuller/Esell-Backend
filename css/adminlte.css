@@ -15375,5 +15375,7 @@ html.maximized-card {
 .img-size-32 {
   width: 32px;
 }
-
+.card.mb-4{
+  width: fit-content;
+}
 /*# sourceMappingURL=adminlte.css.map */

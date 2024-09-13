@@ -74,20 +74,27 @@
                             </a> </li> -->
                     </ul>
                 </li>
-                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php'  ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php' || $_SERVER['REQUEST_URI'] == '/posts-ready.php' || $_SERVER['REQUEST_URI'] == '/posts-deny.php' || $_SERVER['REQUEST_URI'] == '/posts-expire.php'
+                                        ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i>
                         <p>
                             Posts
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item "> <a href="posts-pending.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php' ? "active" : "" ?>"> <i class="bi bi-people"></i>
-                                <p>Posts Pending</p>
+                        <li class="nav-item "> <a href="posts-pending.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php' ? "active" : "" ?>"> <i class="fa-solid fa-hourglass-half"></i>
+                                <p>Pending Posts</p>
                             </a> </li>
 
-                        <!-- <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                <p>Cards</p>
-                            </a> </li> -->
+                        <li class="nav-item"> <a href="posts-ready.php" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Ready Posts</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="posts-deny.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
+                                <p>Denied Posts</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="posts-expire.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
+                                <p>Expired Posts</p>
+                            </a> </li>
                     </ul>
                 </li>
 

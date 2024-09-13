@@ -7,7 +7,7 @@ use \dbn\AuthController;
 require_once 'controller/authControllers.php';
 
 $obj = new AuthController();
-$query = $obj::GET_POSTS_PENDING_QUERY;
+$query = $obj::GET_POSTS_EXPIRE_QUERY;
 $querySwich = $obj::CHANGE_POST_STATE_QUERY;
 $array = [];
 $data = $obj->getAllList($query, $array);
@@ -21,7 +21,7 @@ if (
         $_POST['id']
     ];
     $obj->addCategory($querySwich, $arrayState);
-    header('Location: /posts-pending.php');
+    header('Location: /posts-expire.php');
 }
 
 
@@ -135,8 +135,8 @@ if (
                                             </div>
                                         </div>
                                     </div>
-                            </tr>
-                        <?php endforeach; ?>
+
+                                <?php endforeach; ?>
                     </tbody>
                 </table>
             </div> <!-- /.card-body -->

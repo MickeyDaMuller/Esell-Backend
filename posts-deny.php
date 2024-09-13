@@ -7,7 +7,7 @@ use \dbn\AuthController;
 require_once 'controller/authControllers.php';
 
 $obj = new AuthController();
-$query = $obj::GET_POSTS_PENDING_QUERY;
+$query = $obj::GET_POSTS_DENIED_QUERY;
 $querySwich = $obj::CHANGE_POST_STATE_QUERY;
 $array = [];
 $data = $obj->getAllList($query, $array);
@@ -21,7 +21,7 @@ if (
         $_POST['id']
     ];
     $obj->addCategory($querySwich, $arrayState);
-    header('Location: /posts-pending.php');
+    header('Location: /posts-deny.php');
 }
 
 
@@ -90,7 +90,7 @@ if (
                                 <td><?= $value['brandName'] != null ? $value['brandName'] : ''  ?></td>
                                 <td><?= $value['subBrandName'] ?></td>
                                 <td><?= $value['categoryName'] ?></td>
-                                <td><Button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#readyModal<?= $value['id'] ?>">Ready</Button> <Button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#denyModal<?= $value['id'] ?>">Deny</Button></td>
+                                <td><Button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#readyModal<?= $value['id'] ?>">Ready</Button> <Button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#denyModal<?= $value['id'] ?>">Expire</Button></td>
 
                                 <div class="modal fade" id="denyModal<?= $value['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -101,12 +101,12 @@ if (
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Are you sure you want to Deny Post it will not appear on application?</p>
+                                                    <p>Are you sure you want to Expire Post it will not appear on application?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                                                     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-                                                        <input type="hidden" name="state" value="denied">
+                                                        <input type="hidden" name="state" value="expired">
                                                         <input type="hidden" name="id" value="<?= $value['id'] ?>">
                                                         <button type="submit" class="btn btn-primary">yes</button>
                                                     </form>
@@ -135,8 +135,8 @@ if (
                                             </div>
                                         </div>
                                     </div>
-                            </tr>
-                        <?php endforeach; ?>
+
+                                <?php endforeach; ?>
                     </tbody>
                 </table>
             </div> <!-- /.card-body -->
