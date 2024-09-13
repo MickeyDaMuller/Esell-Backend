@@ -27,6 +27,30 @@ class AuthController extends AuthModel
     const DELETE_SUB_BRAND_QUERY = "DELETE FROM `sub_brands` WHERE id = ?";
     const GET_ALL_USERS_QUERY = "SELECT * FROM `users`";
     const CHANGE_USER_STATE_QUERY = "UPDATE `users` SET active = ? WHERE id = ?";
+    const GET_USER_BY_ID_QUERY = "SELECT * FROM `users` WHERE id = ?";
+    const GET_POSTS_PENDING_QUERY = "SELECT posts.*, 
+       users.username AS userName, 
+       users.email AS userEmail, 
+       brand_logos.name AS brandName, 
+       categories.name AS categoryName, 
+       sub_brands.name AS subBrandName
+FROM posts  
+JOIN users ON posts.userId = users.id
+JOIN brand_logos ON posts.brandLogoId = brand_logos.id
+JOIN categories ON posts.categoryId = categories.id
+JOIN sub_brands ON posts.subBrandId = sub_brands.id
+WHERE posts.postStatus = 'pending';
+";
+
+    // const GET_POSTS_PENDING_QUERY = "SELECT  posts.* , users.username as userName, users.email as userEmail, brand_logos.name as brandName, 
+    // categories.name as categoryName, sub_brands.name as subBrandName  
+    // FROM `posts`  
+    // JOIN  'users' ON posts.userId = users.id  ,
+    //  JOIN brand_logos ON posts.brandId = brand_logos.id , 
+    //  JOIN categories ON posts.categoryId = categories.id ,
+    //   JOIN sub_brands ON posts.subBrandId = sub_brands.id  
+    //   WHERE 'users.status' = 'pending'";
+
 
 
 

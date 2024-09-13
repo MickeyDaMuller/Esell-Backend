@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="brandId" class="form-label">Select Brand</label>
                     <select class="form-select" aria-label="Default select example" name="brandId" placeholder="select brand">
                         <?php foreach ($brand as $value) : ?>
-                            
+
                             <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                         <?php endforeach; ?>
                     </select>

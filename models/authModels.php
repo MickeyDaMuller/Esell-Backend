@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace dbn;
 
 use PDO;
@@ -22,7 +23,7 @@ class AuthModel extends Database
             return "select error message" . $e->getMessage();
         }
     }
-    
+
     public function viewListItems($query, $array)
     {
         try {
@@ -57,7 +58,7 @@ class AuthModel extends Database
             return "select error message" . $e->getMessage();
         }
     }
-    
+
     protected function update($query, $array)
     {
         try {
