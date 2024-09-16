@@ -74,7 +74,7 @@
                             </a> </li> -->
                     </ul>
                 </li>
-                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php' || $_SERVER['REQUEST_URI'] == '/posts-ready.php' || $_SERVER['REQUEST_URI'] == '/posts-deny.php' || $_SERVER['REQUEST_URI'] == '/posts-expire.php'
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/posts-pending.php' || $_SERVER['REQUEST_URI'] == '/posts-ready.php' || $_SERVER['REQUEST_URI'] == '/posts-deny.php'
                                         ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i>
                         <p>
                             Posts
@@ -92,8 +92,27 @@
                         <li class="nav-item"> <a href="posts-deny.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
                                 <p>Denied Posts</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="posts-expire.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
-                                <p>Expired Posts</p>
+                    </ul>
+                </li>
+                <li class="nav-item <?= $_SERVER['REQUEST_URI'] == '/boat-types.php' || $_SERVER['REQUEST_URI'] == '/boat-type-add.php'  ? "menu-open" : "" ?>"> <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i>
+                        <p>
+                            Boats
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item "> <a href="boat-types.php" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/boat-types.php' ? "active" : "" ?>"> <i class="fa-solid fa-hourglass-half"></i>
+                                <p>Boat Types</p>
+                            </a> </li>
+
+                        <li class="nav-item"> <a href="boat-type-add.php" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Add Boat Type</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="posts-deny.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
+                                <p>Boat Size</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="posts-deny.php" class="nav-link"> <i class="fa-solid fa-ban"></i>
+                                <p>Add Boat Size</p>
                             </a> </li>
                     </ul>
                 </li>

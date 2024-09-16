@@ -82,8 +82,11 @@ JOIN sub_brands ON posts.subBrandId = sub_brands.id
 WHERE posts.postStatus = 'expired';
 ";
 
-
-
+    const GET_BOAT_TYPE_QUERY = "SELECT * FROM `boat_types`";
+    const ADD_BOAT_TYPE_QUERY= "INSERT INTO `boat_types` (name) VALUES (?)";
+    const DEDLETE_BOAT_TYPE_QUERY = "DELETE FROM `boat_types` WHERE id = ?";
+    const UPDATE_BOAT_TYPE_QUERY = "UPDATE `boat_types` SET name = ? WHERE id = ?";
+    const GET_BOAT_TYPE_BY_ID_QUERY = "SELECT * FROM `boat_types` WHERE id = ?";
 
 
 
